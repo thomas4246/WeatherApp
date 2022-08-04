@@ -20,6 +20,20 @@ export default function RightControl() {
             <img src={require('../images/place.png')} alt='' height={20} />
             <h5>Location</h5>
             <button>*</button>
+
+            {/* Location form */}
+            <div className='location'>
+              <form action=''>
+                <label>Seattle</label> {/* Location  */}
+                <input
+                  type='text'
+                  name='lacation'
+                  placeholder='Add location'
+                  id='location-input'
+                />
+                <button type='submit'>+</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>

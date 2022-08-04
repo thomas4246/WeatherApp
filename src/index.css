@@ -41,7 +41,7 @@ label {
   position: absolute;
   height: 100vh;
   width: 16.7vw;
-  position: fixed;
+
   right: 0;
 }
 
@@ -75,4 +75,20 @@ button {
 .title button {
   border-radius: 10px;
   height: 25px;
+}
+
+#location-input {
+  font-size: 10px;
+  height: 20px;
+  width: 120px;
+}
+
+button {
+  position: absolute;
+  right: 2%;
+}
+
+.main {
+  position: absolute;
+  left: 20%;
 }
