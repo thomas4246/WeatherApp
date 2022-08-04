@@ -1,13 +1,78 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #f1f1f1;
+  font-family: 'Nunito', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* left control */
+.left-control {
+  background-color: rgb(34, 35, 35);
+  color: #f1f1f1;
+  position: absolute;
+  height: 100vh;
+  width: 16.7vw;
+}
+
+.logo {
+  text-align: center;
+}
+
+h5 {
+  font-size: 15px;
+  margin-top: 10%;
+}
+
+.logo img {
+  height: 80px;
+  width: 80px;
+  margin: 20% 0 5% 0;
+}
+
+label {
+  padding: 2%;
+  font-size: 12px;
+}
+
+/* Right control */
+
+.right-control {
+  background-color: rgb(34, 35, 35);
+  color: #f1f1f1;
+  position: absolute;
+  height: 100vh;
+  width: 16.7vw;
+  position: fixed;
+  right: 0;
+}
+
+.date {
+  padding: 15% 0 10%;
+
+  background-color: #607eaa;
+}
+
+.right-control p {
+  margin: 0;
+}
+
+.date {
+  text-align: center;
+}
+
+/* Location */
+
+.title {
+  margin-left: 15%;
+}
+
+.title img,
+h5,
+button {
+  display: inline-block;
+  margin: 5% 2%;
+}
+
+.title button {
+  border-radius: 10px;
+  height: 25px;
 }
