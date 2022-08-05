@@ -3,7 +3,7 @@ import React from 'react';
 export default function RightControl() {
   return (
     <>
-      <div className='right-control position-fixed'>
+      <div className='right-control '>
         {/* Update */}
         <div className='date'>
           <p style={{ fontSize: '10px' }}>Last updated</p>
