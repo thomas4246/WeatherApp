@@ -1,4 +1,5 @@
 import React from 'react';
+import { ProgressBar } from 'react-bootstrap';
 
 export default function Card() {
   return (
@@ -49,6 +50,14 @@ export default function Card() {
                 <div className='row text-center'>
                   <div className='col'>
                     <h2>36%</h2>
+                    <ProgressBar
+                      now={50}
+                      style={{
+                        height: '5px',
+                        width: '250px',
+                        margin: 'auto',
+                      }}
+                    />
                   </div>
                   <div className='col'>
                     <h2>3.6 m/s</h2>
