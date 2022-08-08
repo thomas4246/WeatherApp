@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { UilSearch } from '@iconscout/react-unicons';
 
-export default function CityInput({ setQuery, units, setUnits }) {
+export default function CityInput({ setQuery }) {
   const [city, setCity] = useState('');
 
   const handleSearchClick = () => {
@@ -9,14 +10,19 @@ export default function CityInput({ setQuery, units, setUnits }) {
 
   return (
     <>
-      <input
-        value={city}
-        onChange={(e) => setCity(e.currentTarget.value)}
-        type='text'
-        placeholder='Add location'
-        id='location-input'
-      />
-      <button onClick={handleSearchClick}>+</button>
+      <div className='city-input'>
+        <input
+          value={city}
+          onChange={(e) => setCity(e.currentTarget.value)}
+          type='text'
+          placeholder='Add location'
+        />
+        <UilSearch
+          size={25}
+          className='text-black search-icon'
+          onClick={handleSearchClick}
+        />
+      </div>
     </>
   );
 }
