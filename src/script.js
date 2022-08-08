@@ -7,14 +7,6 @@ function sstore() {
     } else {
       thm = 'light';
     }
-
-    localStorage.removeItem('theme');
-    localStorage.setItem('theme', thm);
-
-    localStorage.removeItem('unit');
-    localStorage.setItem('unit', unit);
-
-    console.log(unit);
   }
 }
 
@@ -32,7 +24,6 @@ function themer() {
     root.style.setProperty('--text', '#ececec');
     root.style.setProperty('--listtext', '#bfbfbf');
     root.style.setProperty('--elevation', '#ffffff14');
-    Chart.defaults.global.defaultFontColor = '#ececec';
   } else {
     //light - default
     root.style.setProperty('--body', '#efefef');
@@ -44,7 +35,8 @@ function themer() {
     root.style.setProperty('--text', '#585858');
     root.style.setProperty('--listtext', '#757575');
     root.style.setProperty('--elevation', '#ededeb66');
-    Chart.defaults.global.defaultFontColor = '#585858';
   }
   sstore();
 }
+
+export default sstore;

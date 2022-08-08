@@ -1,4 +1,5 @@
 import React from 'react';
+import sstore from '../script';
 
 export default function LeftControl({ setQuery, units, setUnits }) {
   const handleUnitsChange = (e) => {
@@ -17,37 +18,29 @@ export default function LeftControl({ setQuery, units, setUnits }) {
           </div>
           <div className='unit'>
             {/* units */}
-            <fieldset>
-              <h5>Units</h5>
 
-              <div>
-                <div>
-                  <input
-                    type='radio'
-                    id='metric'
-                    name='unit'
-                    value='metric'
-                    defaultChecked
-                    onClick={handleUnitsChange}
-                  />
-                  <label htmlFor='metric'>Metric</label>
-                </div>
+            <h5> - Units - </h5>
 
-                <div>
-                  <input
-                    type='radio'
-                    id='imperial'
-                    name='unit'
-                    value='imperial'
-                    onClick={handleUnitsChange}
-                  />
+            <div>
+              <button
+                name='metric'
+                className='units'
+                onClick={handleUnitsChange}
+              >
+                °C
+              </button>
 
-                  <label htmlFor='imperial'>Imperial</label>
-                </div>
-              </div>
-            </fieldset>
+              <button
+                name='imperial'
+                className='units'
+                onClick={handleUnitsChange}
+              >
+                °F
+              </button>
+            </div>
+
             <div className='theme'>
-              <h5>Theme</h5>
+              <h5> - Theme - </h5>
               <div className='form-check form-switch'>
                 <label
                   className='form-check-label'

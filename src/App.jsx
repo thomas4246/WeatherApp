@@ -15,7 +15,6 @@ function App() {
     const fetchWeatherData = async () => {
       await getFormattedWeatherData({ ...query, units }).then((data) => {
         setWeather(data);
-        console.log(data);
       });
     };
 
@@ -28,7 +27,7 @@ function App() {
         <div>
           <Location setQuery={setQuery} />
           <CityInput setQuery={setQuery} units={units} setUnits={setUnits} />
-          <LeftControl />
+          <LeftControl units={units} setUnits={setUnits} />
           <Card weather={weather} />
           <RightControl weather={weather} setQuery={setQuery} />
         </div>

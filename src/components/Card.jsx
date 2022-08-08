@@ -28,7 +28,7 @@ export default function Card({
               <div className='row'>
                 <p>{`${name}, ${country}`}</p>
                 <div className='col-10'>
-                  <p className='card-text temp'>{temp.toFixed()}°C</p>
+                  <p className='card-text temp'>{temp.toFixed()}°</p>
                 </div>
                 <div className='col-2 weather-icon'>
                   <img src={iconsUrlfromCode(icon)} alt='' />
@@ -49,7 +49,7 @@ export default function Card({
                   </div>
                   <div className='col'>
                     <p>Feels Like</p>
-                    <h2>{feels_like.toFixed()}°C</h2>
+                    <h2>{feels_like.toFixed()}°</h2>
                   </div>
                 </div>
 
