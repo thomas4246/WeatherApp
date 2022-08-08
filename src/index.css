@@ -27,12 +27,11 @@ body {
 
 .search-icon {
   color: var(--text-color);
+  margin-left: 1%;
 }
 
 .search-icon:hover {
   cursor: pointer;
-  transition: 0.5s ease-in-out;
-  transform: scale(1.2);
 }
 
 .form__group {
@@ -48,8 +47,9 @@ body {
   outline: 0;
   font-size: 1.3vw;
   padding: 7px 0;
-  background: transparent;
+  background: none;
   transition: border-color 0.2s;
+  color: var(--text-color);
 }
 .form__field::placeholder {
   color: gray;
@@ -250,10 +250,10 @@ h5 {
   font-size: 30px;
 }
 
-.wi-raindrop,
-.wi-strong-wind {
-  padding-right: 10px;
-  margin-top: 8px;
+.humidity-icon,
+.wind-icon {
+  width: 25%;
+  margin-top: 3%;
 }
 
 .bar {
@@ -276,10 +276,10 @@ h5 {
   justify-content: flex-end;
 }
 
-.wi-sunrise,
-.wi-sunset {
+.sunrise-icon,
+.sunset-icon {
   padding-right: 10px;
-  margin-top: 4px;
+  width: 10%;
 }
 
 .footer {

@@ -1,4 +1,10 @@
 import React from 'react';
+import {
+  UilTear,
+  UilWind,
+  UilSunset,
+  UilMountainsSun,
+} from '@iconscout/react-unicons';
 import { ProgressBar } from 'react-bootstrap';
 import { iconsUrlfromCode, formatLocalTime } from '../service/weatherService';
 
@@ -57,11 +63,11 @@ export default function Card({
 
                 <div className='row'>
                   <div className='col humidity'>
-                    <i className='wi wi-raindrop'></i>
+                    <UilTear className='humidity-icon' />
                     <p>Humidity</p>
                   </div>
                   <div className='col wind'>
-                    <i class='wi wi-strong-wind'></i>
+                    <UilWind className='wind-icon' />
                     <p>Wind</p>
                   </div>
                 </div>
@@ -85,13 +91,13 @@ export default function Card({
 
                 <div className='row sun-data'>
                   <div className='col sunrise'>
-                    <i className='wi wi-sunrise'></i>
+                    <UilMountainsSun className='sunrise-icon' />
                     <p>
                       Sunrise: {formatLocalTime(sunrise, timezone, 'hh:mm a')}
                     </p>
                   </div>
                   <div className='col sunset'>
-                    <i className='wi wi-sunset'></i>
+                    <UilSunset className='sunset-icon' />
                     <p>
                       Sunset: {formatLocalTime(sunset, timezone, 'hh:mm a')}
                     </p>
