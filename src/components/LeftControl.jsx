@@ -1,4 +1,5 @@
 import React from 'react';
+import Units from './Units';
 
 export default function LeftControl() {
   return (
@@ -17,24 +18,7 @@ export default function LeftControl() {
               <h5>Units</h5>
 
               <div>
-                <input
-                  type='radio'
-                  id='metric'
-                  name='unit'
-                  value='metric'
-                  checked
-                />
-                <label for='metric'>Metric</label>
-              </div>
-
-              <div>
-                <input
-                  type='radio'
-                  id='imperial'
-                  name='unit'
-                  value='imperial'
-                />
-                <label for='imperial'>Imperial</label>
+                <Units />
               </div>
             </fieldset>
             <div className='theme'>
@@ -42,7 +26,7 @@ export default function LeftControl() {
               <div className='form-check form-switch'>
                 <label
                   className='form-check-label'
-                  for='flexSwitchCheckDefault'
+                  htmlFor='flexSwitchCheckDefault'
                 >
                   Dark Theme
                 </label>

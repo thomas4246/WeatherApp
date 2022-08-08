@@ -1,21 +1,37 @@
 import React from 'react';
 import { ProgressBar } from 'react-bootstrap';
+import { iconsUrlfromCode, formatToLocalTime } from '../service/weatherService';
 
-export default function Card() {
+export default function Card({
+  weather: {
+    name,
+    country,
+    temp,
+    details,
+    description,
+    humidity,
+    speed,
+    feels_like,
+    sunrise,
+    sunset,
+    icon,
+    timezone,
+  },
+}) {
   return (
-    <>
+    <div className='main'>
       <div className='row align-items-center'>
         <div className='col-6 mx-auto '>
           <div className='card shadow border top-card'>
             {/* Location & temperture */}
             <div className='card-body d-flex flex-column '>
               <div className='row'>
-                <p>New York, US</p>
+                <p>{`${name}, ${country}`}</p>
                 <div className='col-10'>
-                  <p className='card-text temp'>26°C</p>
+                  <p className='card-text temp'>{temp.toFixed()}°C</p>
                 </div>
                 <div className='col-2 weather-icon'>
-                  <i className='wi wi-day-sunny'></i>
+                  <img src={iconsUrlfromCode(icon)} alt='' />
                 </div>
               </div>
             </div>
@@ -24,22 +40,24 @@ export default function Card() {
           {/* other info */}
 
           <div className='col mx-auto '>
-            <div className='card shadow border mid-card'>
+            <div className='card shadow border bot-card'>
               <div className='card-body d-flex flex-column '>
-                <div className='row'>
+                <div className='row info-title'>
                   <div className='col-10'>
-                    <h2 className='card-text'>Clear</h2>
-                    <p>Clear Sky</p>
+                    <h2 className='card-text'>{details}</h2>
+                    <p style={{ textTransform: 'uppercase' }}>{description}</p>
                   </div>
                   <div className='col'>
                     <p>Feels Like</p>
-                    <h2>26°C</h2>
+                    <h2>{feels_like.toFixed()}°C</h2>
                   </div>
                 </div>
-                <br />
+
+                <div className='bar'></div>
+
                 <div className='row'>
                   <div className='col humidity'>
-                    <i class='wi wi-raindrop'></i>
+                    <i className='wi wi-raindrop'></i>
                     <p>Humidity</p>
                   </div>
                   <div className='col wind'>
@@ -49,9 +67,9 @@ export default function Card() {
                 </div>
                 <div className='row text-center'>
                   <div className='col'>
-                    <h2>36%</h2>
+                    <h2>{humidity.toFixed()}%</h2>
                     <ProgressBar
-                      now={50}
+                      now={humidity.toFixed()}
                       style={{
                         height: '5px',
                         width: '250px',
@@ -60,7 +78,23 @@ export default function Card() {
                     />
                   </div>
                   <div className='col'>
-                    <h2>3.6 m/s</h2>
+                    <h2>{speed.toFixed(1)} m/s</h2>
+                  </div>
+                </div>
+                <div className='bar'></div>
+
+                <div className='row sun-data'>
+                  <div className='col sunrise'>
+                    <i className='wi wi-sunrise'></i>
+                    <p>
+                      Sunrise: {formatToLocalTime(sunrise, timezone, 'hh:mm a')}
+                    </p>
+                  </div>
+                  <div className='col sunset'>
+                    <i className='wi wi-sunset'></i>
+                    <p>
+                      Sunset: {formatToLocalTime(sunset, timezone, 'hh:mm a')}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -68,6 +102,6 @@ export default function Card() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
