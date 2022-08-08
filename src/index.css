@@ -6,6 +6,7 @@ body {
 
 /* City Input */
 .city-input {
+  margin-top: 2%;
   text-align: center;
 }
 
@@ -15,6 +16,37 @@ body {
 
 .search-icon:hover {
   cursor: pointer;
+  transition: 0.5s ease-in-out;
+  transform: scale(1.2);
+}
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+}
+
+.form__field {
+  width: 20%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3vw;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.form__field::placeholder {
+  color: gray;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 500;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+  transition: 0.2s ease;
 }
 
 /* left control */
@@ -64,46 +96,53 @@ label {
 .date {
   padding: 15% 0 10%;
 
-  background-color: #607eaa;
+  background: radial-gradient(
+    circle,
+    rgba(238, 213, 174, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+  text-align: center;
 }
 
 .right-control p {
   margin: 0;
 }
 
-.date {
-  text-align: center;
+.date p {
+  color: white;
+}
+
+.major-city {
+  margin: 10% 0;
+  display: grid;
+}
+
+.city-btn {
+  margin: 10%;
+  border: 0;
+  background-color: rgb(248, 248, 248);
 }
 
 /* Location */
 
-.title {
-  margin-left: 15%;
-  margin-top: 10%;
-}
-
-.title img,
-h5,
-button {
-  display: inline-block;
-  margin: 5% 2%;
-}
-
-.title button {
-  border-radius: 10px;
-  height: 25px;
+.location h5 {
+  margin-top: 0;
 }
 
 .location {
-  margin-top: 10%;
+  margin-top: 2%;
   display: flex;
   justify-content: center;
 }
 
-#location-input {
-  font-size: 10px;
-  height: 20px;
-  width: 120px;
+.location button {
+  margin-top: -10px;
+  border: 0;
+}
+
+.location img {
+  padding-right: 5px;
+  margin-bottom: 5px;
 }
 
 /* Main View */
@@ -124,7 +163,11 @@ button {
   border-bottom-right-radius: 0;
   padding: 20px;
 
-  background-color: #607eaa;
+  background: linear-gradient(
+    270deg,
+    rgba(37, 125, 184, 1) 15%,
+    rgb(15, 187, 222) 100%
+  );
 }
 
 .temp {

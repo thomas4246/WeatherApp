@@ -1,7 +1,10 @@
 import React from 'react';
-import Units from './Units';
 
-export default function LeftControl() {
+export default function LeftControl({ setQuery, units, setUnits }) {
+  const handleUnitsChange = (e) => {
+    const selectedUnit = e.currentTarget.name;
+    if (units !== selectedUnit) setUnits(selectedUnit);
+  };
   return (
     <>
       <div className='left-control'>
@@ -18,7 +21,29 @@ export default function LeftControl() {
               <h5>Units</h5>
 
               <div>
-                <Units />
+                <div>
+                  <input
+                    type='radio'
+                    id='metric'
+                    name='unit'
+                    value='metric'
+                    defaultChecked
+                    onClick={handleUnitsChange}
+                  />
+                  <label htmlFor='metric'>Metric</label>
+                </div>
+
+                <div>
+                  <input
+                    type='radio'
+                    id='imperial'
+                    name='unit'
+                    value='imperial'
+                    onClick={handleUnitsChange}
+                  />
+
+                  <label htmlFor='imperial'>Imperial</label>
+                </div>
               </div>
             </fieldset>
             <div className='theme'>

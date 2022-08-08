@@ -43,26 +43,26 @@ const formatCurrentWeather = (data) => {
     description,
   };
 };
-const formatForecastWeather = (data) => {
-  let { timezone, daily, hourly } = data;
-  daily = daily.slice(1, 6).map((d) => {
-    return {
-      title: formatToLocalTime(d.dt, timezone, 'ccc'),
-      temp: d.temp.day,
-      icon: d.weather[0].icon,
-    };
-  });
+// const formatForecastWeather = (data) => {
+//   let { timezone, daily, hourly } = data;
+//   daily = daily.slice(1, 6).map((d) => {
+//     return {
+//       title: formatLocalTime(d.dt, timezone, 'ccc'),
+//       temp: d.temp.day,
+//       icon: d.weather[0].icon,
+//     };
+//   });
 
-  hourly = hourly.slice(1, 6).map((d) => {
-    return {
-      title: formatToLocalTime(d.dt, timezone, 'hh:mm a'),
-      temp: d.temp.day,
-      icon: d.weather[0].icon,
-    };
-  });
+//   hourly = hourly.slice(1, 6).map((d) => {
+//     return {
+//       title: formatLocalTime(d.dt, timezone, 'hh:mm a'),
+//       temp: d.temp.day,
+//       icon: d.weather[0].icon,
+//     };
+//   });
 
-  return { timezone, daily, hourly };
-};
+//   return { timezone, daily, hourly };
+// };
 
 const getFormattedWeatherData = async (searchParams) => {
   const formattedCurrentWeather = await getWeatherData(
@@ -77,21 +77,18 @@ const getFormattedWeatherData = async (searchParams) => {
     lon,
     exclude: 'currrent, minutely,alerts',
     units: searchParams.units,
-  }).then(formatForecastWeather);
+  });
 
   return { ...formattedCurrentWeather, ...formattedForecastWeather };
 };
 
-const formatToLocalTime = (
-  secs,
-  zone,
-  format = "cccc, dd LLL yyyy' | Local time: 'hh:mm a"
-) => DateTime.fromSeconds(secs).setZone(zone).toFormat(format);
+const formatLocalTime = (secs, zone, format = 't') =>
+  DateTime.fromSeconds(secs).setZone(zone).toFormat(format);
 
 const formatDay = (secs, zone, format = 'cccc') =>
   DateTime.fromSeconds(secs).setZone(zone).toFormat(format);
 
-const formatDate = (secs, zone, format = 'dd') =>
+const formatDate = (secs, zone, format = 'd') =>
   DateTime.fromSeconds(secs).setZone(zone).toFormat(format);
 
 const formatYear = (secs, zone, format = 'LLL yyyy') =>
@@ -102,10 +99,4 @@ const iconsUrlfromCode = (code) =>
 
 export default getFormattedWeatherData;
 
-export {
-  formatToLocalTime,
-  formatDate,
-  formatDay,
-  formatYear,
-  iconsUrlfromCode,
-};
+export { formatDate, formatDay, formatYear, formatLocalTime, iconsUrlfromCode };

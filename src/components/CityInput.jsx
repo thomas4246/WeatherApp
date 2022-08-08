@@ -4,24 +4,30 @@ import { UilSearch } from '@iconscout/react-unicons';
 export default function CityInput({ setQuery }) {
   const [city, setCity] = useState('');
 
-  const handleSearchClick = () => {
+  const handleSearchClick = (e) => {
     if (city !== '') setQuery({ q: city });
   };
 
   return (
     <>
       <div className='city-input'>
-        <input
-          value={city}
-          onChange={(e) => setCity(e.currentTarget.value)}
-          type='text'
-          placeholder='Add location'
-        />
-        <UilSearch
-          size={25}
-          className='text-black search-icon'
-          onClick={handleSearchClick}
-        />
+        <div class='form__group field'>
+          <input
+            className='form__field'
+            value={city}
+            onChange={(e) => setCity(e.currentTarget.value)}
+            type='text'
+            placeholder='Search a Location...'
+            name='search'
+            id='search'
+          />
+
+          <UilSearch
+            size={25}
+            className='text-black search-icon'
+            onClick={handleSearchClick}
+          />
+        </div>
       </div>
     </>
   );

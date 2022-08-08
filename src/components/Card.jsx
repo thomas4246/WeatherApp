@@ -1,6 +1,6 @@
 import React from 'react';
 import { ProgressBar } from 'react-bootstrap';
-import { iconsUrlfromCode, formatToLocalTime } from '../service/weatherService';
+import { iconsUrlfromCode, formatLocalTime } from '../service/weatherService';
 
 export default function Card({
   weather: {
@@ -22,7 +22,7 @@ export default function Card({
     <div className='main'>
       <div className='row align-items-center'>
         <div className='col-6 mx-auto '>
-          <div className='card shadow border top-card'>
+          <div className='card shadow border top-card' style={{}}>
             {/* Location & temperture */}
             <div className='card-body d-flex flex-column '>
               <div className='row'>
@@ -87,13 +87,13 @@ export default function Card({
                   <div className='col sunrise'>
                     <i className='wi wi-sunrise'></i>
                     <p>
-                      Sunrise: {formatToLocalTime(sunrise, timezone, 'hh:mm a')}
+                      Sunrise: {formatLocalTime(sunrise, timezone, 'hh:mm a')}
                     </p>
                   </div>
                   <div className='col sunset'>
                     <i className='wi wi-sunset'></i>
                     <p>
-                      Sunset: {formatToLocalTime(sunset, timezone, 'hh:mm a')}
+                      Sunset: {formatLocalTime(sunset, timezone, 'hh:mm a')}
                     </p>
                   </div>
                 </div>

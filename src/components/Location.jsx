@@ -1,6 +1,6 @@
 import React from 'react';
 import { toast } from 'react-toastify';
-import { UilLocationPoint } from '@iconscout/react-unicons';
+import { UilCompass } from '@iconscout/react-unicons';
 
 export default function Location(setQuery, units, setUnits) {
   const handleLocationClick = () => {
@@ -19,14 +19,12 @@ export default function Location(setQuery, units, setUnits) {
     }
   };
   return (
-    <>
-      <img src={require('../images/place.png')} alt='' height={20} />
-      <h5>Location</h5>
-      <UilLocationPoint
-        size={25}
-        className='text-black cursor-pointer transition ease-out hover:scale-125'
-        onClick={handleLocationClick}
-      />
-    </>
+    <div className='location'>
+      <button onClick={handleLocationClick}>
+        <img src={require('../images/place.png')} alt='location' height={20} />
+        Get Current Location
+      </button>
+      <UilCompass style={{ marginLeft: '2px', marginTop: '-10px' }} />
+    </div>
   );
 }
