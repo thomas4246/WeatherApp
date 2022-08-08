@@ -1,4 +1,5 @@
 import React from 'react';
+import { UilMoon, UilSun } from '@iconscout/react-unicons';
 import Footer from './Footer';
 
 export default function LeftControl({ setQuery, units, setUnits }) {
@@ -6,6 +7,17 @@ export default function LeftControl({ setQuery, units, setUnits }) {
     const selectedUnit = e.currentTarget.name;
     if (units !== selectedUnit) setUnits(selectedUnit);
   };
+
+  function nightMode() {
+    document.body.classList.add('dark-theme');
+  }
+
+  function lightMode() {
+    if (document.body.classList.contains('dark-theme')) {
+      document.body.classList.remove('dark-theme');
+    }
+  }
+
   return (
     <>
       <div className='left-control'>
@@ -40,22 +52,10 @@ export default function LeftControl({ setQuery, units, setUnits }) {
             </div>
           </div>
 
-          <div className='theme '>
+          <div className='theme text-center'>
             <h5> - Theme - </h5>
-            <div className='form-check form-switch'>
-              <label
-                className='form-check-label'
-                htmlFor='flexSwitchCheckDefault'
-              >
-                Dark Theme
-              </label>
-              <input
-                className='form-check-input'
-                type='checkbox'
-                role='switch'
-                id='flexSwitchCheckDefault'
-              />
-            </div>
+            <UilMoon onClick={nightMode} className='moon' />
+            <UilSun onClick={lightMode} className='sun' />
           </div>
         </div>
         <div className='footer'>

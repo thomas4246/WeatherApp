@@ -24,7 +24,7 @@ export default function CityInput({ setQuery }) {
 
           <UilSearch
             size={25}
-            className='text-black search-icon'
+            className='search-icon'
             onClick={handleSearchClick}
           />
         </div>

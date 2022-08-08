@@ -22,7 +22,7 @@ export default function Card({
     <div className='main'>
       <div className='row align-items-center'>
         <div className='col-6 mx-auto '>
-          <div className='card shadow border top-card' style={{}}>
+          <div className='card shadow top-card'>
             {/* Location & temperture */}
             <div className='card-body d-flex flex-column '>
               <div className='row'>
@@ -40,7 +40,7 @@ export default function Card({
           {/* other info */}
 
           <div className='col mx-auto '>
-            <div className='card shadow border bot-card'>
+            <div className='card shadow bot-card'>
               <div className='card-body d-flex flex-column '>
                 <div className='row info-title'>
                   <div className='col-10'>
