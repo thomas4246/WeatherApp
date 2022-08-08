@@ -1,5 +1,5 @@
 import React from 'react';
-import sstore from '../script';
+import Footer from './Footer';
 
 export default function LeftControl({ setQuery, units, setUnits }) {
   const handleUnitsChange = (e) => {
@@ -16,9 +16,9 @@ export default function LeftControl({ setQuery, units, setUnits }) {
               <h5>The Weather App</h5>
             </div>
           </div>
-          <div className='unit'>
-            {/* units */}
+          {/* units */}
 
+          <div className='unit text-center'>
             <h5> - Units - </h5>
 
             <div>
@@ -38,25 +38,28 @@ export default function LeftControl({ setQuery, units, setUnits }) {
                 °F
               </button>
             </div>
+          </div>
 
-            <div className='theme'>
-              <h5> - Theme - </h5>
-              <div className='form-check form-switch'>
-                <label
-                  className='form-check-label'
-                  htmlFor='flexSwitchCheckDefault'
-                >
-                  Dark Theme
-                </label>
-                <input
-                  className='form-check-input'
-                  type='checkbox'
-                  role='switch'
-                  id='flexSwitchCheckDefault'
-                />
-              </div>
+          <div className='theme '>
+            <h5> - Theme - </h5>
+            <div className='form-check form-switch'>
+              <label
+                className='form-check-label'
+                htmlFor='flexSwitchCheckDefault'
+              >
+                Dark Theme
+              </label>
+              <input
+                className='form-check-input'
+                type='checkbox'
+                role='switch'
+                id='flexSwitchCheckDefault'
+              />
             </div>
           </div>
+        </div>
+        <div className='footer'>
+          <Footer />
         </div>
       </div>
     </>
