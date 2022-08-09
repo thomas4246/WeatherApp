@@ -23,6 +23,7 @@ export default function Card({
     icon,
     timezone,
   },
+  units,
 }) {
   return (
     <div className='main'>
@@ -34,7 +35,13 @@ export default function Card({
               <div className='row'>
                 <p>{`${name}, ${country}`}</p>
                 <div className='col-10'>
-                  <p className='card-text temp'>{temp.toFixed()}°</p>
+                  <div className='card-text temp'>
+                    {units === 'metric' ? (
+                      <p>{temp.toFixed()}°C</p>
+                    ) : (
+                      <p>{temp.toFixed()}°F</p>
+                    )}
+                  </div>
                 </div>
                 <div className='col-2 weather-icon'>
                   <img src={iconsUrlfromCode(icon)} alt='' />
@@ -49,13 +56,17 @@ export default function Card({
             <div className='card shadow bot-card'>
               <div className='card-body d-flex flex-column '>
                 <div className='row info-title'>
-                  <div className='col-10'>
+                  <div className='col-9'>
                     <h2 className='card-text'>{details}</h2>
                     <p style={{ textTransform: 'uppercase' }}>{description}</p>
                   </div>
-                  <div className='col'>
+                  <div className='col text-center'>
                     <p>Feels Like</p>
-                    <h2>{feels_like.toFixed()}°</h2>
+                    {units === 'metric' ? (
+                      <h2>{feels_like.toFixed()}°C</h2>
+                    ) : (
+                      <h2>{feels_like.toFixed()}°F</h2>
+                    )}
                   </div>
                 </div>
 
@@ -84,7 +95,11 @@ export default function Card({
                     />
                   </div>
                   <div className='col'>
-                    <h2>{speed.toFixed(1)} m/s</h2>
+                    {units === 'mertic' ? (
+                      <h2>{speed.toFixed(1)} m/s</h2>
+                    ) : (
+                      <h2>{speed.toFixed(1)} Mph</h2>
+                    )}
                   </div>
                 </div>
                 <div className='bar'></div>

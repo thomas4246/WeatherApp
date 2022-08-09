@@ -2,7 +2,7 @@ import React from 'react';
 import { toast } from 'react-toastify';
 import { UilCompass } from '@iconscout/react-unicons';
 
-export default function Location(setQuery, units, setUnits) {
+export default function Location(setQuery) {
   const handleLocationClick = () => {
     if (navigator.geolocation) {
       toast.info('Fetching users location.');

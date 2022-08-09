@@ -2,7 +2,7 @@ import React from 'react';
 import { UilMoon, UilSun } from '@iconscout/react-unicons';
 import Footer from './Footer';
 
-export default function LeftControl({ setQuery, units, setUnits }) {
+export default function LeftControl({ units, setUnits }) {
   const handleUnitsChange = (e) => {
     const selectedUnit = e.currentTarget.name;
     if (units !== selectedUnit) setUnits(selectedUnit);
@@ -25,7 +25,7 @@ export default function LeftControl({ setQuery, units, setUnits }) {
           <div className='fixed-left'>
             <div className='logo'>
               <img src={require('../images/icons-weather.png')} alt='logo' />
-              <h5>The Weather App</h5>
+              <h5>Weather Forecast</h5>
             </div>
           </div>
           {/* units */}
