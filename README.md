@@ -1,3 +1,3 @@
 # Weather App
 
-This is a weather app built on React.js useing OpenWeather API.
+This is a weather app built on React.js using OpenWeather API.
