@@ -4,14 +4,14 @@ import { UilSearch } from '@iconscout/react-unicons';
 export default function CityInput({ setQuery }) {
   const [city, setCity] = useState('');
 
-  const handleSearchClick = (e) => {
+  const handleSearchClick = () => {
     if (city !== '') setQuery({ q: city });
   };
 
   return (
     <>
       <div className='city-input'>
-        <div class='form__group field'>
+        <div className='form__group field'>
           <input
             className='form__field'
             value={city}

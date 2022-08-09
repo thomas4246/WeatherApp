@@ -23,9 +23,9 @@ function App() {
 
   return (
     <>
+      <Location setQuery={setQuery} />
       {weather && (
         <div>
-          <Location setQuery={setQuery} />
           <CityInput setQuery={setQuery} />
           <LeftControl units={units} setUnits={setUnits} />
           <Card weather={weather} units={units} />

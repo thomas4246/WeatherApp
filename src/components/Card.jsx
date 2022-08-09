@@ -86,6 +86,7 @@ export default function Card({
                   <div className='col'>
                     <h2>{humidity.toFixed()}%</h2>
                     <ProgressBar
+                      className='pb'
                       now={humidity.toFixed()}
                       style={{
                         height: '5px',
