@@ -5,13 +5,11 @@ import { UilCompass } from '@iconscout/react-unicons';
 export default function Location({ setQuery }) {
   const handleLocationClick = () => {
     if (navigator.geolocation) {
-      // toast.info('Fetching users location.');
+      toast.info('Fetching users location.');
       navigator.geolocation.getCurrentPosition((position) => {
-        // toast.success('Location fetched!');
+        toast.success('Location fetched!');
         let lat = position.coords.latitude;
         let lon = position.coords.longitude;
-
-        console.log(lat, lon);
 
         setQuery({
           lat,
