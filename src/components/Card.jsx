@@ -33,8 +33,8 @@ export default function Card({
             {/* Location & temperture */}
             <div className='card-body d-flex flex-column '>
               <div className='row'>
-                <p>{`${name}, ${country}`}</p>
-                <div className='col-10'>
+                <p className='country'>{`${name}, ${country}`}</p>
+                <div className='col-9'>
                   <div className='card-text temp'>
                     {units === 'metric' ? (
                       <p>{temp.toFixed()}°C</p>
@@ -43,8 +43,8 @@ export default function Card({
                     )}
                   </div>
                 </div>
-                <div className='col-2 weather-icon'>
-                  <img src={iconsUrlfromCode(icon)} alt='' />
+                <div className='col-3 weather-icon'>
+                  <img src={iconsUrlfromCode(icon)} alt='weatherIcon' />
                 </div>
               </div>
             </div>
@@ -55,8 +55,8 @@ export default function Card({
           <div className='col mx-auto '>
             <div className='card shadow bot-card'>
               <div className='card-body d-flex flex-column '>
-                <div className='row info-title'>
-                  <div className='col-9'>
+                <div className='row info-title text-center'>
+                  <div className='col col-md-6 '>
                     <h2 className='card-text'>{details}</h2>
                     <p style={{ textTransform: 'uppercase' }}>{description}</p>
                   </div>
@@ -72,7 +72,7 @@ export default function Card({
 
                 <div className='bar'></div>
 
-                <div className='row'>
+                <div className='row status-title'>
                   <div className='col humidity'>
                     <UilTear className='humidity-icon' />
                     <p>Humidity</p>
@@ -82,7 +82,7 @@ export default function Card({
                     <p>Wind</p>
                   </div>
                 </div>
-                <div className='row text-center'>
+                <div className='row text-center status'>
                   <div className='col'>
                     <h2>{humidity.toFixed()}%</h2>
                     <ProgressBar
@@ -90,8 +90,8 @@ export default function Card({
                       now={humidity.toFixed()}
                       style={{
                         height: '5px',
-                        width: '250px',
-                        margin: 'auto',
+                        width: 'auto',
+                        margin: '0 15%',
                       }}
                     />
                   </div>

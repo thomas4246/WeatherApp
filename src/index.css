@@ -21,7 +21,7 @@ body {
 
 /* City Input */
 .city-input {
-  margin-top: 2%;
+  margin-top: 1%;
   text-align: center;
 }
 
@@ -96,9 +96,14 @@ body {
   text-align: center;
 }
 
+#logo-icon {
+  width: 70%;
+  height: auto;
+}
+
 h5 {
   color: var(--text-color);
-  font-size: 20px;
+  font-size: 1.3vw;
   margin-top: 10%;
 }
 
@@ -110,7 +115,7 @@ h5 {
 
 .units {
   margin: 5px;
-  font-size: 16px;
+  font-size: 1.3vw;
   color: var(--text-color);
   cursor: pointer;
   border: 3px solid;
@@ -148,6 +153,12 @@ h5 {
   top: 0;
 }
 
+@media (max-width: 768px) {
+  .right-control {
+    /* display: none; */
+  }
+}
+
 .date {
   padding: 15% 0 10%;
   background-color: var(--date);
@@ -160,12 +171,30 @@ h5 {
 
 .date p {
   color: #f1f1f1;
+  font-size: 0.8vw;
+}
+
+.date h1 {
+  font-size: 2.5vw;
+}
+
+.date h4 {
+  font-size: 1.5vw;
+}
+
+.date h6 {
+  font-size: 1vw;
 }
 
 .major-city {
+  font-size: 1.2vw;
   color: var(--text-color);
   margin: 10% 0;
   display: grid;
+}
+
+em {
+  font-size: 1.3vw;
 }
 
 .city-btn {
@@ -185,8 +214,8 @@ h5 {
 }
 
 .location button {
+  font-size: 1.2vw;
   color: #4cc6ba;
-  margin-top: -10px;
   background-color: transparent;
   border: 0;
 }
@@ -194,6 +223,8 @@ h5 {
 .location img {
   padding-right: 5px;
   margin-bottom: 5px;
+  width: 10%;
+  height: auto;
 }
 
 /* Main View */
@@ -201,11 +232,16 @@ h5 {
 .main {
   color: var(--text-color);
   width: 100vw;
-  margin-top: 2%;
+  margin-top: 1%;
 }
 
 .info-title {
   padding: 0 20px;
+  font-size: 1vw;
+}
+
+.info-title h2 {
+  font-size: 2.5vw;
 }
 
 .top-card {
@@ -215,7 +251,7 @@ h5 {
   border-top-right-radius: 2em;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  padding: 20px;
+  padding: 5%;
 
   background: linear-gradient(
     270deg,
@@ -225,11 +261,24 @@ h5 {
 }
 
 .temp {
-  font-size: 60px;
+  font-size: 5vw;
 }
 
-.weather-icon {
-  font-size: 64px;
+.country {
+  font-size: 1.2vw;
+}
+
+.weather-icon img {
+  width: 100%;
+  height: auto;
+}
+
+.status-title p {
+  font-size: 2.5vw;
+}
+
+.status h2 {
+  font-size: 2vw;
 }
 
 .bot-card {
@@ -252,8 +301,8 @@ h5 {
 
 .humidity-icon,
 .wind-icon {
-  width: 25%;
   margin-top: 3%;
+  width: 2vw;
 }
 
 .bar {
@@ -264,6 +313,7 @@ h5 {
 
 .sun-data {
   padding: 0 20px;
+  font-size: 1vw;
 }
 
 .sunrise {
@@ -279,7 +329,7 @@ h5 {
 .sunrise-icon,
 .sunset-icon {
   padding-right: 10px;
-  width: 10%;
+  width: 2.5vw;
 }
 
 .footer {

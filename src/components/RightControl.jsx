@@ -39,7 +39,7 @@ export default function RightControl({ setQuery, weather: { dt, timezone } }) {
       <div className='right-control '>
         {/* Update */}
         <div className='date'>
-          <p style={{ fontSize: '13px', marginBottom: '5px' }}>Last Update</p>
+          <p>Last Update</p>
           <h6>{formatLocalTime(dt, timezone)}</h6>
           <h4> {formatDay(dt, timezone)}</h4>
           <h1>{formatDate(dt, timezone)}</h1>

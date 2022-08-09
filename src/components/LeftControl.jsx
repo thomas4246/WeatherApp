@@ -24,7 +24,11 @@ export default function LeftControl({ units, setUnits }) {
         <div className='container-fluid'>
           <div className='fixed-left'>
             <div className='logo'>
-              <img src={require('../images/icons-weather.png')} alt='logo' />
+              <img
+                src={require('../images/icons-weather.png')}
+                alt='logo'
+                id='logo-icon'
+              />
               <h5>Weather Forecast</h5>
             </div>
           </div>
