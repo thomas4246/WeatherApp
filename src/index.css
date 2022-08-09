@@ -2,6 +2,7 @@ body {
   margin: 0;
   background-color: var(--primany-color);
   font-family: 'Nunito', sans-serif;
+  transition: 0.3s ease-in-out;
 }
 
 /* Theme */
