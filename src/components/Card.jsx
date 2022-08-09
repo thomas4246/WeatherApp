@@ -95,7 +95,7 @@ export default function Card({
                     />
                   </div>
                   <div className='col'>
-                    {units === 'mertic' ? (
+                    {units === 'metric' ? (
                       <h2>{speed.toFixed(1)} m/s</h2>
                     ) : (
                       <h2>{speed.toFixed(1)} Mph</h2>
