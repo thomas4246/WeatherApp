@@ -23,17 +23,12 @@ function App() {
 
   const [weather, setWeather] = useState(null);
 
-  //// Local Storage ////
-
   useEffect(() => {
+    //// Local Storage ////
     localStorage.setItem('location', JSON.stringify(query));
-  }, [query]);
-
-  useEffect(() => {
     localStorage.setItem('unit', JSON.stringify(units));
-  }, [units]);
 
-  useEffect(() => {
+    //// Fetch data ////
     const fetchWeatherData = async () => {
       const message = query.q ? query.q : 'current location.';
 
