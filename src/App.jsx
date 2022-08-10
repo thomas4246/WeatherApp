@@ -9,9 +9,29 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
-  const [query, setQuery] = useState({ q: 'Seattle' });
-  const [units, setUnits] = useState('metric');
+  const [query, setQuery] = useState(
+    JSON.parse(localStorage.getItem('location')) === null
+      ? { q: 'seattle' }
+      : JSON.parse(localStorage.getItem('location'))
+  );
+
+  const [units, setUnits] = useState(
+    JSON.parse(localStorage.getItem('unit')) === null
+      ? 'metric'
+      : JSON.parse(localStorage.getItem('unit'))
+  );
+
   const [weather, setWeather] = useState(null);
+
+  //// Local Storage ////
+
+  useEffect(() => {
+    localStorage.setItem('location', JSON.stringify(query));
+  }, [query]);
+
+  useEffect(() => {
+    localStorage.setItem('unit', JSON.stringify(units));
+  }, [units]);
 
   useEffect(() => {
     const fetchWeatherData = async () => {

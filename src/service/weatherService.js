@@ -1,4 +1,6 @@
+import { queries } from '@testing-library/react';
 import { DateTime } from 'luxon';
+import CityInput from '../components/CityInput';
 
 const API_KEY = '988299740f950d31d917c48e11e92c76';
 const BASE_URL = 'https://api.openweathermap.org/data/2.5';

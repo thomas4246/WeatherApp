@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { UilSearch } from '@iconscout/react-unicons';
 
 export default function CityInput({ setQuery }) {

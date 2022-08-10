@@ -10,12 +10,20 @@ export default function LeftControl({ units, setUnits }) {
 
   function nightMode() {
     document.body.classList.add('dark-theme');
+    localStorage.setItem('dark-mode', 'enabled');
   }
 
   function lightMode() {
     if (document.body.classList.contains('dark-theme')) {
       document.body.classList.remove('dark-theme');
+      localStorage.setItem('dark-mode', 'disabled');
     }
+  }
+
+  if (localStorage.getItem('dark-mode') === 'disabled') {
+    lightMode();
+  } else {
+    nightMode();
   }
 
   return (
