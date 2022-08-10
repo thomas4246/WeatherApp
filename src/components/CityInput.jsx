@@ -5,7 +5,16 @@ export default function CityInput({ setQuery }) {
   const [city, setCity] = useState('');
 
   const handleSearchClick = () => {
-    if (city !== '') setQuery({ q: city });
+    if (city !== '') {
+      setQuery({ q: city });
+      setCity('');
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSearchClick();
+    }
   };
 
   return (
@@ -20,6 +29,7 @@ export default function CityInput({ setQuery }) {
             placeholder='Search a Location...'
             name='search'
             id='search'
+            onKeyDown={handleKeyPress}
           />
 
           <UilSearch
