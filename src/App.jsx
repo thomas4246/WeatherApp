@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Header from './components/Header';
 import LeftControl from './components/LeftControl';
 import RightControl from './components/RightControl';
 import CityInput from './components/CityInput';
@@ -48,6 +49,7 @@ function App() {
     <>
       {weather && (
         <div>
+          <Header />
           <Location setQuery={setQuery} />
           <CityInput setQuery={setQuery} />
           <LeftControl units={units} setUnits={setUnits} />

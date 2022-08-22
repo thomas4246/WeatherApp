@@ -26,7 +26,7 @@ export default function Card({
   units,
 }) {
   return (
-    <div className='main'>
+    <div className='main container'>
       <div className='row align-items-center'>
         <div className='col-6 mx-auto '>
           <div className='card shadow top-card'>

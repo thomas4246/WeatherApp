@@ -1,33 +1,9 @@
 import React from 'react';
-import { UilMoon, UilSun } from '@iconscout/react-unicons';
 import Footer from './Footer';
+import Units from './Units';
+import Theme from './Theme';
 
 export default function LeftControl({ units, setUnits }) {
-  const handleUnitsChange = (e) => {
-    const selectedUnit = e.currentTarget.name;
-    if (units !== selectedUnit) setUnits(selectedUnit);
-  };
-
-  const bodyClass = document.body.classList;
-
-  function darkMode() {
-    bodyClass.add('dark-theme');
-    localStorage.setItem('dark-mode', 'enabled');
-  }
-
-  function lightMode() {
-    if (bodyClass.contains('dark-theme')) {
-      bodyClass.remove('dark-theme');
-      localStorage.setItem('dark-mode', 'disabled');
-    }
-  }
-
-  if (localStorage.getItem('dark-mode') !== 'enabled') {
-    lightMode();
-  } else {
-    darkMode();
-  }
-
   return (
     <>
       <div className='left-control'>
@@ -46,30 +22,12 @@ export default function LeftControl({ units, setUnits }) {
 
           <div className='unit text-center'>
             <h5> - Units - </h5>
-
-            <div>
-              <button
-                name='metric'
-                className='units'
-                onClick={handleUnitsChange}
-              >
-                °C
-              </button>
-
-              <button
-                name='imperial'
-                className='units'
-                onClick={handleUnitsChange}
-              >
-                °F
-              </button>
-            </div>
+            <Units units={units} setUnits={setUnits} />
           </div>
 
           <div className='theme text-center'>
             <h5> - Theme - </h5>
-            <UilMoon onClick={darkMode} className='moon' />
-            <UilSun onClick={lightMode} className='sun' />
+            <Theme />
           </div>
         </div>
         <div className='footer'>
