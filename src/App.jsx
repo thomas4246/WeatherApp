@@ -49,7 +49,7 @@ function App() {
     <>
       {weather && (
         <div>
-          <Header />
+          <Header units={units} setUnits={setUnits} />
           <Location setQuery={setQuery} />
           <CityInput setQuery={setQuery} />
           <LeftControl units={units} setUnits={setUnits} />
